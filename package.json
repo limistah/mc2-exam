@@ -1,0 +1,13 @@
+{
+  "private": "true",
+  "name": "mc2-exam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
