@@ -45,7 +45,7 @@ describe("transactionService", () => {
 			);
 
 			// Act
-			const result = await transactionServiceInstance.findAll();
+			const result = await transactionServiceInstance.findAll({ wallet: "" });
 
 			// Assert
 			expect(result.statusCode).toEqual(StatusCodes.OK);

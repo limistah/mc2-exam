@@ -1,6 +1,7 @@
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { z } from "zod";
 
+import { paginationValidations } from "@/common/utils/paginationValidation";
 import { transactionValidations } from "@/common/utils/transactionValidation";
 
 extendZodWithOpenApi(z);
@@ -18,5 +19,19 @@ export const TransactionSchema = z.object({
 
 // Input Validation for 'GET transactions' endpoint
 export const GetTransactionsValidationSchema = z.object({
-	query: z.object({ wallet: transactionValidations.walletAddress }),
+	query: z.object({
+		wallet: transactionValidations.walletAddress,
+		page: paginationValidations.page,
+		limit: paginationValidations.limit,
+	}),
 });
+
+export type GetTransactionsValidation = z.infer<
+	typeof GetTransactionsValidationSchema
+>;
+
+export interface IGetTransactionsValidation {
+	page: number;
+	limit: number;
+	wallet: string;
+}

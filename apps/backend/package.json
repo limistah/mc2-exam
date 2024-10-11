@@ -20,6 +20,7 @@
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "^7.0.0",
+		"@prisma/client": "^5.20.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"envalid": "^8.0.0",
@@ -29,6 +30,9 @@
 		"http-status-codes": "^2.3.0",
 		"pino": "^9.4.0",
 		"pino-http": "^10.0.0",
+		"prisma": "^5.20.0",
+		"prisma-class-generator": "^0.2.11",
+		"prisma-class-validator-generator": "^5.0.0",
 		"swagger-ui-express": "^5.0.0",
 		"zod": "^3.22.4"
 	},
