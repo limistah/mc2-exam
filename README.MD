@@ -1,7 +1,9 @@
 
 # MC^2 Exam Solution
 
-This is intended to be a Yarn Mono Repo but faced some issues with the modules, so bear with me with this installation steps.
+This was intended to be a Yarn monorepo but faced some issues with the modules.
+
+So bear with me with these setup procesures.
 
 # Setting Up
 
