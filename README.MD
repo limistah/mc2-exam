@@ -61,5 +61,7 @@ Then visit http://localhost:3000/transactions?wallet=0x9c34729f5a5fc1d499f669379
 
 ## Deployed version
 **For the backend**
+https://backend-black-sun-6822.fly.dev/docs
 
 **For the frontend**
+https://mc2-exam-aleem.netlify.app/?wallet=0x9c34729f5a5fc1d499f669379f9b7ea1de1cf31e

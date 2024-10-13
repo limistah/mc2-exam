@@ -1,0 +1,24 @@
+
+app = 'backend-black-sun-6822'
+primary_region = 'jnb'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[env]
+  NODE_ENV = "production"
+  LOG_LEVEL = "debug"
+  PORT = "3000"
+  MOBULA_API_KEY="b34aaec6-abf3-4600-8f75-58805e63fa95"

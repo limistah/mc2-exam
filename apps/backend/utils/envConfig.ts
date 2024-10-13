@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import { cleanEnv, host, num, port, str, testOnly } from 'envalid';
+import { cleanEnv, port, str, testOnly } from 'envalid';
 
 dotenv.config();
 
@@ -8,9 +8,6 @@ export const env = cleanEnv(process.env, {
     devDefault: testOnly('test'),
     choices: ['development', 'production', 'test'],
   }),
-  HOST: host({ devDefault: testOnly('localhost') }),
   PORT: port({ devDefault: testOnly(3000) }),
-  COMMON_RATE_LIMIT_MAX_REQUESTS: num({ devDefault: testOnly(1000) }),
-  COMMON_RATE_LIMIT_WINDOW_MS: num({ devDefault: testOnly(1000) }),
   MOBULA_API_KEY: str({ devDefault: 'b34aaec6-abf3-4600-8f75-58805e63fa95' }),
 });
