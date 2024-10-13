@@ -82,6 +82,6 @@ https://backend-black-sun-6822.fly.dev/docs
 **For the frontend**
 https://mc2-exam-aleem.netlify.app/?wallet=0x9c34729f5a5fc1d499f669379f9b7ea1de1cf31e
 
-Contribute:
+## Contribute:
 
 Check out the [TODO.MD](./TODO.MD)
