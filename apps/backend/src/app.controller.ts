@@ -8,11 +8,11 @@ export class AppController {
 
   @Get('/transactions')
   @CacheKey('wallet-trxns')
-  @CacheTTL(2 * 60000)
+  @CacheTTL(330 * 60000)
   getTransactions(
     @Query('wallet') walletAddress: string,
-    @Query('limit') limit: string,
-    @Query('page') page: string,
+    @Query('limit') limit: string = '10',
+    @Query('page') page: string = '1',
   ) {
     return this.appService.getTransactions({
       walletAddress,

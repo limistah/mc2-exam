@@ -32,7 +32,7 @@ export class AppService extends BaseService {
         await this.cacheManager.set(
           cacheKey,
           JSON.stringify(transactions),
-          5 * 60000,
+          330 * 60000,
         );
       }
       return {
