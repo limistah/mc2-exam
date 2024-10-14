@@ -22,6 +22,12 @@ export class MobulaClient {
     page: number,
   ) {
     try {
+      // the pagination for mobula does not accept page, we dynamically
+      // determine the next set of data to pull by assuming the caller
+      // already has data from PAGE to PAGE * LIMIT.
+      // Offset is then PAGE * LIMIT. In the case where PAGE is 1,
+      // OFFSET must be 0 ensuring the first page is not missed.
+
       const url = `${
         MobulaURLS.GET_TRANSACTIONS
       }?wallet=${walletAddress}&limit=${limit}&offset=${

@@ -18,13 +18,15 @@ export class AppService extends BaseService {
   }) {
     try {
       let transactions = { data: [], pagination: { total: 0 } };
+      // generate a cache key using the wallet address and the pagination parameters
       const cacheKey = this.generateCacheKey(
         config.walletAddress,
         config.page,
         config.limit,
       );
       const fromCache = await this.cacheManager.get<string>(cacheKey);
-
+      // This assumes the transaction record has been pulled from the upstream API before now, process it then return it as response
+      // If not, it gets the desired transaction from the API, cache's it then return it as a response
       if (fromCache) {
         transactions = JSON.parse(fromCache);
       } else {
@@ -32,7 +34,7 @@ export class AppService extends BaseService {
         await this.cacheManager.set(
           cacheKey,
           JSON.stringify(transactions),
-          330 * 60000,
+          360 * 60000,
         );
       }
       return {

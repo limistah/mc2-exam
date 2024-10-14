@@ -8,7 +8,7 @@ export class AppController {
 
   @Get('/transactions')
   @CacheKey('wallet-trxns')
-  @CacheTTL(330 * 60000)
+  @CacheTTL(360 * 60000)
   getTransactions(
     @Query('wallet') walletAddress: string,
     @Query('limit') limit: string = '10',

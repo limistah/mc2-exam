@@ -18,6 +18,7 @@ export class MobulaService extends BaseService {
     limit: number;
   }) {
     try {
+      // the MobulaClient is intended to implement all the logic around communicating with the mobula API/services
       const resp = await this.mobulaClient.getTransactions(
         params.walletAddress,
         params.limit,
